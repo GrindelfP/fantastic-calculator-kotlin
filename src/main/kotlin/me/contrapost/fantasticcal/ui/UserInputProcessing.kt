@@ -1,8 +1,8 @@
 package me.contrapost.fantasticcal.ui
 
-import me.contrapost.calculusprocessor.calculator.CalculusProcessor
-import me.contrapost.calculusprocessor.calculator.CalculusStep
-import me.contrapost.calculusprocessor.calculator.operators.operatorsWithDescriptions
+import me.contrapost.calculusprocessor.CalculusProcessor
+import me.contrapost.calculusprocessor.CalculusStep
+import me.contrapost.calculusprocessor.operators.operatorsWithDescriptions
 import java.util.*
 import kotlin.system.exitProcess
 
@@ -129,8 +129,7 @@ private fun String?.toCheckedInput(): String = when (this) {
 
 private fun stopProgram(): Nothing = exitProcess(0)
 
-private fun List<CalculusStep>.toStringList(): List<String> = this.mapIndexed {
-        index, calculusStep ->
+private fun List<CalculusStep>.toStringList(): List<String> = this.mapIndexed { index, calculusStep ->
     "step ${index + 1}: ${calculusStep.calculusStepString}, " +
             "[calculated ${calculusStep.operatorType} operators" +
             "${if (calculusStep.binaryStepWithPrecedence()) " with precedence" else ""}]"
