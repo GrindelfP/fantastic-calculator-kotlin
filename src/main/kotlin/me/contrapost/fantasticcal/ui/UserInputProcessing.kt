@@ -1,12 +1,12 @@
 package me.contrapost.fantasticcal.ui
 
-import me.contrapost.fantasticcal.calculator.Calculator
-import me.contrapost.fantasticcal.calculator.CalculusStep
-import me.contrapost.fantasticcal.calculator.operators.operatorsWithDescriptions
+import me.contrapost.calculusprocessor.calculator.CalculusProcessor
+import me.contrapost.calculusprocessor.calculator.CalculusStep
+import me.contrapost.calculusprocessor.calculator.operators.operatorsWithDescriptions
 import java.util.*
 import kotlin.system.exitProcess
 
-val calculator = Calculator()
+val calculator = CalculusProcessor()
 
 fun showIntro() {
     println(title("0.2.0"))
@@ -29,7 +29,7 @@ fun performCalculation() {
     }
 }
 
-private fun getValidCalculus(calculator: Calculator): String {
+private fun getValidCalculus(calculator: CalculusProcessor): String {
     print("""
         Insert calculus (you can type 'stop' to exit).
         > 
